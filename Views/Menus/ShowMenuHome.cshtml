@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MyCMS.Models.Menu>
+
+@{
+    ViewBag.Title = "ShowMenuHome";
+}
+
+<h2>MENU</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodPrice)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodPrice)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<div>
+    <button>
+        @Html.ActionLink("BACK", "Index", "Home")
+    </button>
+</div>

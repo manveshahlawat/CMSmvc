@@ -1,0 +1,54 @@
+﻿@model MyCMS.Models.Customer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<h4>@ViewBag.Message</h4>
+<html style="background-color:antiquewhite">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CUSTOMER DETAILS</title>
+    
+</head>
+<body>
+            
+            <table>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Name)</td>
+                    <td> : </td>
+                    <td>@Html.DisplayFor(model => model.Name)</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.PhoneNumber)</td>
+                    <td> : </td>
+                    <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Email)</td>
+                    <td> : </td>
+                    <td>@Html.DisplayFor(model => model.Email)</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.DOB)</td>
+                    <td> : </td>
+                    <td>@Html.DisplayFor(model => model.DOB)</td>
+                </tr>
+                <tr></tr>
+            </table>
+        
+    <div>
+        <button1 style="color:aquamarine">
+            @Html.ActionLink("EDIT DETAILS", "Edit","Customers", new { Model.Id }, new { @class = "navbar-brand" }) 
+        </button1>
+        <br />
+        <button2>
+            @Html.ActionLink("BACK ", "CustomerDashboard","Customers", new { id = Model.Id })
+        </button2>
+    </div>
+</body>
+</html>

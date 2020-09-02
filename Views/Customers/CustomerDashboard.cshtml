@@ -1,0 +1,27 @@
+﻿@model MyCMS.Models.Customer
+@{
+    ViewBag.Title = "CustomerDashboard";
+    
+}
+
+<title>CUSTOMER DASHBOARD</title>
+
+<div class="navbar-fixed-top" >
+    <button1>
+        @Html.ActionLink("PROFILE", "Details", "Customers", new { Model.Id }, new { @class = "navbar-brand" })
+    </button1>
+    <button2>
+        @Html.ActionLink("Menu", "ShowMenu", "Menus", new { area = "" }, new { @class = "navbar-brand" })
+
+    </button2>
+    <button4>
+        @Html.ActionLink("Orders History", "Index", "Orders", new { area = "" }, new { @class = "navbar-brand" })
+
+    </button4>
+    <button3>
+        @Html.ActionLink("LOGOUT", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    </button3>
+    
+</div>
+<img src="~/Content/food2.jpg" />
+

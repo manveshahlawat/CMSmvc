@@ -1,0 +1,120 @@
+﻿@model MyCMS.Models.Vendor
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html style="background-color:azure">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <style>
+        #Edit-div {
+            position: absolute;
+            left: 40%;
+            top: 20%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+        }
+
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="Edit-div">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Name)</td>
+                    <td>@Html.EditorFor(model => model.Name)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Name)</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.PhoneNumber)</td>
+                    <td>@Html.EditorFor(model => model.PhoneNumber)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.PhoneNumber)</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Email)</td>
+                    <td>@Html.EditorFor(model => model.Email)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Email)</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.ConfirmEmail)</td>
+                    <td>@Html.EditorFor(model => model.ConfirmEmail)</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.ConfirmEmail)</td>
+                </tr>
+
+                <tr></tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Password)</td>
+                    <td>@Html.EditorFor(model => model.Password)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.ConfirmPassword)</td>
+                    <td>@Html.EditorFor(model => model.ConfirmPassword)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.ConfirmPassword)</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="UPDATE" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                    <td>
+                        <button2>
+                            @Html.ActionLink("BACK ", "Details", "Vendors", new { id = Model.Id }, new { @class = "navbar-brand" })
+                        </button2>
+                    </td>
+                </tr>
+
+            </table>
+
+
+        }
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<title>CanteenX Home</title>
+
+<h1>WELCOME TO CanteeX</h1>
+<div class="navbar-fixed-top">
+    <button1>
+        @Html.ActionLink("Menu", "ShowMenuHome", "Menus", new { area = "" }, new { @class = "navbar-brand" })
+       
+    </button1>
+    <button2>
+        @Html.ActionLink("Customer", "CustLogin", "Customers", new { area = "" }, new { @class = "navbar-brand" })
+        
+
+    </button2>
+    <button3>
+        @Html.ActionLink("Vendor", "VendLogin", "Vendors", new { area = "" }, new { @class = "navbar-brand" })
+    </button3>
+</div>
+<img src="~/Content/food1.jpg" />
+
+

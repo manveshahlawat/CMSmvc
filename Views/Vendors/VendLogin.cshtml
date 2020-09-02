@@ -1,0 +1,69 @@
+﻿@model MyCMS.Models.Vendor
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html style="background-color:aquamarine">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VENDOR LOGIN</title>
+    <style>
+        #login-div {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+        }
+
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("Autherise", "Vendors", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Email)</td>
+                    <td>@Html.EditorFor(model => model.Email)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Email)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Password)</td>
+                    <td>@Html.EditorFor(model => model.Password)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <input type="submit" value="LOGIN" />
+                        <input type="reset" value="CLEAR" />
+                    </td>                 
+                </tr>
+                <tr>
+                    <td>
+                        @Html.ActionLink("SIGNUP", "Create")
+                    </td>
+                </tr>
+            </table>
+        }
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    </div>
+
+
+</body>
+</html>
